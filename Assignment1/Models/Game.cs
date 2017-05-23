@@ -11,7 +11,7 @@ namespace Assignment1.Models
 		public string Genre { get; set; }
 		public int AchievementsEarned { get; set; }
 		public int AchievementsTotal { get; set; }
-		public double AchievementProgress { get { return (AchievementsEarned / AchievementsTotal); } }
+		public string AchievementProgress { get { return String.Format("{0}%", (AchievementsEarned / AchievementsTotal)); } }
 		public bool Completed { get; set; }
 
 	}
