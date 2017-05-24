@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Assignment1.Models;
 
 namespace Assignment1
 {
@@ -55,6 +56,8 @@ namespace Assignment1
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
+
+			SeedData.Initialize();
+		}
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Assignment1.Models;
 
 namespace Assignment1.Controllers
 {
@@ -10,7 +11,7 @@ namespace Assignment1.Controllers
     {
         public ViewResult Index()
         {
-            return View();
+            return View(GameLibrary.MyGameLibrary);
         }
 
         public IActionResult About()

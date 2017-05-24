@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Assignment1.Models.Game>
+@{
 	Layout = null;
 }
 <!DOCTYPE html>
@@ -6,20 +7,22 @@
 	<head>
 		<meta name="viewport" content="width=device-width" />
 		<title>CS4790 - Assignment 1</title>
+		<!-- CSS: Using Materialize for colors, using Bootstrap for organizing. -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col s12 center-align">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
 					<h3>Kole Frazier's Game Library</h3>
 					<h5>CS4790 Assignment 1</h5>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col s2 grey darken-1 center-align">
-					<h5>Navigation</h5>
+				<div class="col-sm-2 center-block grey lighten-1">
+					<div class="text-center"><h5>Navigation</h5></div>
 					<p>Dummy data</p>
 					<p>Dummy data</p>
 					<p>Dummy data</p>
@@ -29,22 +32,38 @@
 					<p>Dummy data</p>
 				</div>
 				
-				<div class="col s10">
-						<div class="col s6 grey lighten-2">
-							<h5>Section 1</h5>
+				<div class="col-sm-10">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="grey lighten-2 panel">
+								<h5>Section 1</h5>
+							</div>
 						</div>
-						<div class="col s6 grey lighten-2">
-							<h5>Section 2</h5>
+						<div class="col-sm-6">
+							<div class="grey lighten-2 panel">
+								<h5>Section 2</h5>
+							</div>
 						</div>
-						<div class="col s12 green lighten-3">
-							<h5>Section 2</h5>
-						</div>
+					</div>
+						
+					<div class="row">
+						@foreach (Assignment1.Models.Game game in Model)
+						{
+							<div class="col-sm-12 col-md-6 col-lg-3">
+								<div class="panel green lighten-3 text-center">
+									<h4>@game.Name</h4>
+									<p class="text-muted">@game.Genre</p>
+									<p>@game.Status @game.AchievementProgress</p>
+								</div>
+							</div>
+						}
+					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col s12 light-blue lighten-2 center-align">
-					<p>With some words in it.</p>
+				<div class="col-sm-12 text-center">
+					<p>Footer uuurreeaaa... With some words in it.</p>
 				</div>
 			</div>
 
