@@ -8,6 +8,10 @@ namespace Assignment1.Models
 {
 	public class Game
 	{
+		//Constructors
+		public Game() { }
+
+		//Defined constructor for pre-seed data needs.
 		public Game(string n, string g, int ae, int at, string s) //Lazy Naming.
 		{
 			Name = n;
@@ -17,8 +21,7 @@ namespace Assignment1.Models
 			Status = s;
 		}
 
-		public Game() { }
-
+		//Properties
 		[Required]
 		public string Name { get; set; }
 
@@ -46,6 +49,12 @@ namespace Assignment1.Models
 			get
 			{
 				_AchievementPercentage = AchievementsEarned / (double)AchievementsTotal * 100;
+
+				if (_AchievementPercentage < 0)
+					_AchievementPercentage *= -1;
+				else if (_AchievementPercentage > 100.00)
+					_AchievementPercentage = 100.00;
+
 				return String.Format("{0:0.00}% achievements earned", _AchievementPercentage);
 			}
 		}
@@ -60,7 +69,7 @@ namespace Assignment1.Models
 				if (_AchievementPercentage == 0.0)
 					return "lime lighten-3";
 				else if (_AchievementPercentage >= 100.0)
-					return "yellow accent-4";
+					return "orange accent-3";
 				else
 					return "green lighten-2";
 			}
