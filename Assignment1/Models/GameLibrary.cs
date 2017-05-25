@@ -14,6 +14,21 @@ namespace Assignment1.Models
 			get { return _MyGameLibrary; }
 		}
 
+		public static int LibrarySize
+		{
+			get { return _MyGameLibrary.Count; }
+		}
+
+		public static int TotalEarnedAchievements
+		{
+			get { return MyGameLibrary.Sum(game => game.AchievementsEarned); }
+		}
+
+		public static int TotalAchievements
+		{
+			get { return MyGameLibrary.Sum(game => game.AchievementsTotal); }
+		}
+
 		public static void AddGame(Game game)
 		{
 			_MyGameLibrary.Add(game);

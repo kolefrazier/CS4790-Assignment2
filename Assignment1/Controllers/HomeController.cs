@@ -7,23 +7,41 @@ using Assignment1.Models;
 
 namespace Assignment1.Controllers
 {
-    public class HomeController : Controller
-    {
-        public ViewResult Index()
-        {
-            return View(GameLibrary.MyGameLibrary);
-        }
+	public class HomeController : Controller
+	{
+		public ViewResult Index()
+		{
+			return View(GameLibrary.MyGameLibrary);
+		}
 
-        public IActionResult About()
-        {
-            ViewData["Greeting"] = "Kole's Game Library\nAssignment 1";
+		[HttpGet]
+		public ViewResult AddGame()
+		{
+			return View();
+		}
 
-            return View();
-        }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult AddGame(Game game)
+		{
+			if (ModelState.IsValid)
+			{
+				GameLibrary.AddGame(game);
+				return RedirectToAction("Index");
+			}
+			return View(game);
+		}
 
-        public IActionResult Error()
-        {
-            return View();
-        }
-    }
+		public IActionResult About()
+		{
+			ViewData["Greeting"] = "Kole's Game Library\nAssignment 1";
+
+			return View();
+		}
+
+		public IActionResult Error()
+		{
+			return View();
+		}
+	}
 }

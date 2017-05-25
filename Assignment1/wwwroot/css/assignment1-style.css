@@ -1,0 +1,18 @@
+﻿html, body {
+	height: 100vh;
+}
+
+/*
+.label {
+	font-size: 14px !important;
+}
+*/
+
+a:hover {
+	text-decoration: none;
+}
+
+#sidecontainer {
+	height: 100vh; /*Looks good on Med and Large screens, but becomes dominating on Small screens.*/
+	overflow: auto;
+}

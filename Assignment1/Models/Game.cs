@@ -8,14 +8,16 @@ namespace Assignment1.Models
 {
 	public class Game
 	{
-		public Game(string n, string g, int ae, int at, bool c) //Lazy Naming.
+		public Game(string n, string g, int ae, int at, string s) //Lazy Naming.
 		{
 			Name = n;
 			Genre = g;
 			AchievementsEarned = ae;
 			AchievementsTotal = at;
-			Completed = c;
+			Status = s;
 		}
+
+		public Game() { }
 
 		[Required]
 		public string Name { get; set; }
@@ -31,28 +33,37 @@ namespace Assignment1.Models
 			get { return _AchievementsTotal; }
 			set
 			{
-				if (value == 0)
+				if (value <= 0)
 					_AchievementsTotal = -1; //Arbitrary -1 to prevent division by zero.
 				else
 					_AchievementsTotal = value;
 			} 
 		}
 
+		private double _AchievementPercentage;
 		public string AchievementProgress
 		{
 			get
 			{
-				double PercentageValue = AchievementsEarned / (double)AchievementsTotal * 100;
-				return String.Format("{0:0.00}% completed.", PercentageValue);
+				_AchievementPercentage = AchievementsEarned / (double)AchievementsTotal * 100;
+				return String.Format("{0:0.00}% achievements earned", _AchievementPercentage);
 			}
 		}
 
 		[Required]
-		private bool Completed { get; set; }
+		public string Status { set; get; }
 
-		public string Status
+		public string DisplayColor
 		{
-			get { return (Completed) ? "Finished, " : "Still playing,"; }
+			get
+			{
+				if (_AchievementPercentage == 0.0)
+					return "lime lighten-3";
+				else if (_AchievementPercentage >= 100.0)
+					return "yellow accent-4";
+				else
+					return "green lighten-2";
+			}
 		}
 
 	}
