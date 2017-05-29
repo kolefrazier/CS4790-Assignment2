@@ -32,6 +32,18 @@ namespace Assignment1.Controllers
 			return View(game);
 		}
 
+		[HttpGet]
+		public ViewResult TableView()
+		{
+			return View(GameLibrary.MyGameLibrary);
+		}
+
+		[HttpGet]
+		public ViewResult CompletedGames()
+		{
+			return View(GameLibrary.MyGameLibrary.Where(g => g.Status.Contains("Completed")));
+		}
+
 		public IActionResult About()
 		{
 			ViewData["Greeting"] = "Kole's Game Library\nAssignment 1";

@@ -1,103 +1,61 @@
 ﻿@model Assignment1.Models.Game
 @{
-	Layout = null;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["IncludeMaterialCSS"] = false;
 }
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width" />
-	<title>CS4790 - Assignment 1</title>
-	<!-- CSS: Using Materialize for colors, using Bootstrap for organizing. -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-	<link rel="stylesheet" href="~/css/assignment1-style.css" />
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-				<h3>Kole Frazier's Game Library</h3>
-				<h5>CS4790 Assignment 1</h5>
-				<hr />
-			</div>
-		</div>
+<div class="row">
+	<div class="text-center"><h4>Add a New Game</h4></div>
 
-		<div class="row">
-			<div class="col-sm-2 center-block grey lighten-1" id="sidecontainer">
-				<div class="text-center"><h4>Navigation</h4></div>
-				<ul class="list-unstyled text-center">
-					<li><a asp-action="Index" class="panel btn-block">View Library</a></li>
-					<li><a asp-action="ShowTable" class="panel btn-block">View Game List</a></li>
-					<li><a asp-action="AddGame" class="panel btn-block">Add Game</a></li>
-				</ul>
-			</div>
+	<form asp-action="AddGame">
+		<div class="form-horizontal">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-			<div class="col-sm-10">
-				<div class="row">
-					<div class="text-center"><h4>Add a New Game</h4></div>
-
-					<form asp-action="AddGame">
-						<div class="form-horizontal">
-							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-							<div class="form-group">
-								<label asp-for="Name" class="col-md-2 control-label">Name:</label>
-								<div class="col-md-10">
-									<input asp-for="Name" class="form-control" />
-									<span asp-validation-for="Name" class="text-danger"></span>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label asp-for="Genre" class="col-md-2 control-label">Genre:</label>
-								<div class="col-md-10">
-									<input asp-for="Genre" class="form-control" />
-									<span asp-validation-for="Genre" class="text-danger"></span>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label asp-for="AchievementsEarned" class="col-md-2 control-label">Achievements Earned:</label>
-								<div class="col-md-10">
-									<input asp-for="AchievementsEarned" class="form-control" />
-									<span asp-validation-for="AchievementsEarned" class="text-danger"></span>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label asp-for="AchievementsTotal" class="col-md-2 control-label">Achievements Total:</label>
-								<div class="col-md-10">
-									<input asp-for="AchievementsTotal" class="form-control" />
-									<span asp-validation-for="AchievementsTotal" class="text-danger"></span>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label asp-for="Status" class="col-md-2 control-label">Completion Status:</label>
-								<div class="col-md-10">
-									<input asp-for="Status" class="form-control" />
-									<span asp-validation-for="Status" class="text-danger"></span>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-offset-2 col-md-10">
-									<input type="submit" value="Add Game" class="btn btn-default" />
-								</div>
-							</div>
-
-						</div>
-					</form>
+			<div class="form-group">
+				<label asp-for="Name" class="col-md-2 control-label">Name:</label>
+				<div class="col-md-10">
+					<input asp-for="Name" class="form-control" />
+					<span asp-validation-for="Name" class="text-danger"></span>
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-sm-12 text-center text-muted">
-				<p>Created for CS4790 Assignment 1 by Kole Frazier.</p>
+			<div class="form-group">
+				<label asp-for="Genre" class="col-md-2 control-label">Genre:</label>
+				<div class="col-md-10">
+					<input asp-for="Genre" class="form-control" />
+					<span asp-validation-for="Genre" class="text-danger"></span>
+				</div>
 			</div>
-		</div>
 
-	</div>
-</body>
-</html>
+			<div class="form-group">
+				<label asp-for="AchievementsEarned" class="col-md-2 control-label">Achievements Earned:</label>
+				<div class="col-md-10">
+					<input asp-for="AchievementsEarned" class="form-control" />
+					<span asp-validation-for="AchievementsEarned" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="AchievementsTotal" class="col-md-2 control-label">Achievements Total:</label>
+				<div class="col-md-10">
+					<input asp-for="AchievementsTotal" class="form-control" />
+					<span asp-validation-for="AchievementsTotal" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Status" class="col-md-2 control-label">Completion Status:</label>
+				<div class="col-md-10">
+					<input asp-for="Status" class="form-control" />
+					<span asp-validation-for="Status" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Add Game" class="btn btn-default" />
+				</div>
+			</div>
+
+		</div>
+	</form>
+</div>

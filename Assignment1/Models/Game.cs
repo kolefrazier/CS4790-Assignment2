@@ -66,9 +66,7 @@ namespace Assignment1.Models
 		{
 			get
 			{
-				if (_AchievementPercentage == 0.0)
-					return "lime lighten-3";
-				else if (_AchievementPercentage >= 100.0)
+				if (_AchievementPercentage >= 100.0)
 					return "orange accent-3";
 				else
 					return "green lighten-2";
