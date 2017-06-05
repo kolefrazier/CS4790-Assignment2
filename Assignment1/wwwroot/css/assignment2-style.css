@@ -31,6 +31,17 @@ table tr:nth-child(even) { /*Zebra-stripe the tables.*/
 	background-color: #90caf9;
 }
 
+.circle-image {
+	border-radius: 50%; /*This is the default value of "img-circle" from Bootstrap. This is me adding some fun transitions to it.*/
+	-webkit-transition: all .2s ease-in-out; /*Chrome*/
+	-moz-transition: all .2s ease-in-out; /*Firefox*/
+	transition: all .2s ease-in-out;
+}
+
+.circle-image:hover {
+	border-radius: 0%;
+}
+
 .headertext {
 	color: #ffffff;
 }
