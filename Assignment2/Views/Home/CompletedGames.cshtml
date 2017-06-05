@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<Assignment1.Models.Game>
-@{ 
+@{
 	Layout = "~/Views/Shared/_Layout.cshtml";
-	ViewData["Title"] = "Table View";
+	ViewData["Title"] = "Completed Games";
 }
 
 <link rel="stylesheet" href="~/css/materialize.min.css" />
-<div class="row">
-	<div class="text-center headertext"><h4>Library in Table Form</h4></div>
+<div class="text-center headertext"><h4>Completed Games List</h4></div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -24,9 +23,6 @@
 				</th>
 				<th>
 					@Html.DisplayNameFor(model => model.Status)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.OnlineMultiplayer)
 				</th>
 			</tr>
 		</thead>
@@ -49,12 +45,8 @@
 					<td>
 						@Html.DisplayFor(GameEntry => game.Status)
 					</td>
-					<td>
-						@Html.DisplayFor(GameEntry => game.IsOnlineMultiplayer)
-					</td>
 				</tr>
 
 			}
 		</tbody>
 	</table>
-</div>

@@ -24,17 +24,10 @@
 				</div>
 
 				<div class="form-group">
-					<label asp-for="Genre" class="col-lg-2 col-md-2 control-label">Genre:</label>
-					<div class="col-lg-10 col-md-10">
+					<label asp-for="Genre" class="col-md-2 control-label">Genre:</label>
+					<div class="col-md-10">
 						<input asp-for="Genre" class="form-control" />
 						<span asp-validation-for="Genre" class="text-warning"></span>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="col-lg-offset-3 col-lg-3 col-md-10 checkbox-label">
-						<label asp-for="OnlineMultiplayer"><input asp-for="OnlineMultiplayer" type="checkbox" class="form-control" /> Online Multiplayer</label>
-						<span asp-validation-for="OnlineMultiplayer" class="text-warning"></span>
 					</div>
 				</div>
 			</div>
@@ -67,14 +60,12 @@
 			</div>
 		</div>
 
-		<!-- Button Bar -->
+		<!-- Submit Button -->
 		<div class="row">
 			<br />
 			<div class="form-group">
-				<div class="col-md-offset-4 col-md-10 col-sm-10">
-					<input type="submit" value="Add Game to Library" class="btn btn-success" />
-					<a asp-action="AddGame" class="btn btn-info">Clear Form</a>
-					<a asp-action="Index" class="btn btn-danger">Cancel</a>
+				<div class="col-md-offset-5 col-md-10 col-sm-10">
+					<input type="submit" value="Add Game to Library" class="btn btn-default" />
 				</div>
 			</div>
 		</div>

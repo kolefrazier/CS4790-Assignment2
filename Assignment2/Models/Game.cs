@@ -12,14 +12,13 @@ namespace Assignment1.Models
 		public Game() { }
 
 		//Defined constructor for pre-seed data needs.
-		public Game(string n, string g, int ae, int at, string s, bool om = false) //Lazy Naming, om defaults to false if not defined.
+		public Game(string n, string g, int ae, int at, string s) //Lazy Naming.
 		{
 			Name = n;
 			Genre = g;
 			AchievementsEarned = ae;
 			AchievementsTotal = at;
 			Status = s;
-			OnlineMultiplayer = om;
 		}
 
 		//Properties
@@ -62,17 +61,6 @@ namespace Assignment1.Models
 
 		[Required]
 		public string Status { set; get; }
-
-		public bool OnlineMultiplayer { set; get; }
-		public string IsOnlineMultiplayer {
-			get
-			{
-				if (OnlineMultiplayer == true)
-					return "Yes";
-				else
-					return "No";
-			}
-		}
 
 		public string DisplayColor
 		{

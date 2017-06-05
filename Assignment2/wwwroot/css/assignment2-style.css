@@ -1,4 +1,4 @@
-﻿/* Many colors are copied from the Materialize.css color tables: http://materializecss.com/color.html */
+﻿/* Many colors are courtesy of the Materialize.css color tables: http://materializecss.com/color.html */
 
 html, body {
 	height: 100vh;
@@ -16,17 +16,17 @@ a:hover {
 table {
 	background-color: #ededed;
 	color: #000000;
-	/*border-bottom: 1px solid #000000;*/
+	border-bottom: 1px solid #000000;
 }
 
 table th {
 	/*background-color: #d0d0d0;*/
 	background-color: #2196f3;
 	color: #000000;
-	border-radius: 0; /*Each column header had color gaps where the rendered panels' corners were. This makes the entire th bar solid. */
+	border-radius: 0;
 }
 
-table tr:nth-child(even) { /*Zebra-stripe the tables.*/
+table tr:nth-child(even) {
 	/*background-color: #d0d0d0;*/
 	background-color: #90caf9;
 }
@@ -47,23 +47,9 @@ table tr:nth-child(even) { /*Zebra-stripe the tables.*/
 	color: #eeeeee;
 }
 
-.form-group input[type=text] { /*A generic "input" will change button backgrounds, too.*/
+.form-group input {
 	background-color: #efefef;
 	color: #000000;
-}
-
-.form-group .checkbox-label {
-	display: block;
-	float: left;
-	white-space: nowrap;
-}
-
-.form-group input[type=checkbox] {
-	vertical-align: middle;
-}
-
-.form-group .checkbox-label span {
-	vertical-align: middle;
 }
 
 .nav-panel-color {
@@ -118,17 +104,19 @@ table tr:nth-child(even) { /*Zebra-stripe the tables.*/
 
 .outline-regular {
 	outline: 4px solid ;
-	outline-offset: -7px; /*Adds a little space between the outline and the inner content.*/
+	outline-offset: -7px;
 }
 
 .game-regular {
 	background-color: #81c784;
-	outline: 5px solid #1b5e20;
+	outline: 5px solid #81c784;
+	outline-offset: -3px;
 }
 
 .game-completed {
 	background-color: #81c784;
 	outline: 5px solid #ff9100;
+	outline-offset: -3px;
 }
 
 #sidecontainer {
