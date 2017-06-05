@@ -2,60 +2,73 @@
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	ViewData["IncludeMaterialCSS"] = false;
+	ViewData["Title"] = "Add a Game";
 }
-<div class="row">
-	<div class="text-center"><h4>Add a New Game</h4></div>
 
-	<form asp-action="AddGame">
-		<div class="form-horizontal">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="text-center bodytext headertext"><h4>Add a New Game</h4><br /></div>
 
-			<div class="form-group">
-				<label asp-for="Name" class="col-md-2 control-label">Name:</label>
-				<div class="col-md-10">
-					<input asp-for="Name" class="form-control" />
-					<span asp-validation-for="Name" class="text-danger"></span>
+<form asp-action="AddGame">
+	<div class="form-horizontal">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+		<div class="row">
+
+			<!-- Game Identification Information -->
+			<div class="col-lg-6 col-md-12 col-sm-12">
+				<div class="form-group">
+					<label asp-for="Name" class="col-lg-2 col-md-2 control-label">Name:</label>
+					<div class="col-lg-10 col-md-10">
+						<input asp-for="Name" class="form-control" />
+						<span asp-validation-for="Name" class="text-warning"></span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Genre" class="col-md-2 control-label">Genre:</label>
+					<div class="col-md-10">
+						<input asp-for="Genre" class="form-control" />
+						<span asp-validation-for="Genre" class="text-warning"></span>
+					</div>
 				</div>
 			</div>
 
-			<div class="form-group">
-				<label asp-for="Genre" class="col-md-2 control-label">Genre:</label>
-				<div class="col-md-10">
-					<input asp-for="Genre" class="form-control" />
-					<span asp-validation-for="Genre" class="text-danger"></span>
+			<!-- Game Achievement Information -->
+			<div class="col-lg-6 col-md-12 col-sm-12">
+				<div class="form-group">
+					<label asp-for="AchievementsEarned" class="col-md-3 control-label text-left">Achievements Earned:</label>
+					<div class="col-md-9">
+						<input asp-for="AchievementsEarned" class="form-control" />
+						<span asp-validation-for="AchievementsEarned" class="text-warning"></span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="AchievementsTotal" class="col-md-3 control-label">Achievements Total:</label>
+					<div class="col-md-9">
+						<input asp-for="AchievementsTotal" class="form-control" />
+						<span asp-validation-for="AchievementsTotal" class="text-warning"></span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Status" class="col-md-3 control-label">Completion Status:</label>
+					<div class="col-md-9">
+						<input asp-for="Status" class="form-control" placeholder="Completed, In Progress, Still in Box, etc." />
+						<span asp-validation-for="Status" class="text-warning"></span>
+					</div>
 				</div>
 			</div>
-
-			<div class="form-group">
-				<label asp-for="AchievementsEarned" class="col-md-2 control-label">Achievements Earned:</label>
-				<div class="col-md-10">
-					<input asp-for="AchievementsEarned" class="form-control" />
-					<span asp-validation-for="AchievementsEarned" class="text-danger"></span>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label asp-for="AchievementsTotal" class="col-md-2 control-label">Achievements Total:</label>
-				<div class="col-md-10">
-					<input asp-for="AchievementsTotal" class="form-control" />
-					<span asp-validation-for="AchievementsTotal" class="text-danger"></span>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label asp-for="Status" class="col-md-2 control-label">Completion Status:</label>
-				<div class="col-md-10">
-					<input asp-for="Status" class="form-control" />
-					<span asp-validation-for="Status" class="text-danger"></span>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-10">
-					<input type="submit" value="Add Game" class="btn btn-default" />
-				</div>
-			</div>
-
 		</div>
-	</form>
-</div>
+
+		<!-- Submit Button -->
+		<div class="row">
+			<br />
+			<div class="form-group">
+				<div class="col-md-offset-5 col-md-10 col-sm-10">
+					<input type="submit" value="Add Game to Library" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+</form>

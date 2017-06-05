@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - Assign. 1</title>
+	<title>@ViewData["Title"] - Assign. 2</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-	<link rel="stylesheet" href="~/css/assignment1-style.css" />
+	<link rel="stylesheet" href="~/css/assignment2-style.css" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
@@ -15,34 +15,33 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+			<div class="col-lg-12 col-md-4 col-sm-6 text-center headertext">
 				<h3>Kole Frazier's Game Library</h3>
-				<h5>CS4790 Assignment 1</h5>
-				<hr />
+				<h5>CS4790 Assignment 2</h5>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-sm-2 center-block bg-muted nav-panel-color nav-panel-title" id="sidecontainer">
-				<div class="text-center"><h5><u>Navigation</u></h5></div>
-				<ul class="list-unstyled text-center nav-panel-entry">
-					<li><a asp-action="Index" class="panel btn-block">View Library</a></li>
-					<li><a asp-action="TableView" class="panel btn-block">View Table List</a></li>
-					<li><a asp-action="CompletedGames" class="panel btn-block">View Completed Games</a></li>
-					<li><a asp-action="AddGame" class="panel btn-block">Add Game</a></li>
-					<li></li>
+			<div class="col-lg-12 col-md-12 col-sm-12 navbar navbar-default center-block text-center">
+				<div class="nav navbar-header nav-text-header"><p class="navbar-brand nav-text-header">Navigation</p></div>
+				<ul class="nav navbar-nav text-primary">
+					<li><a asp-action="Index">View Library</a></li>
+					<li><a asp-action="TableView">View Table List</a></li>
+					<li><a asp-action="CompletedGames">View Completed Games</a></li>
+					<li><a asp-action="AddGame">Add Game</a></li>
 				</ul>
 			</div>
+		</div>
 
-			<div class="col-sm-10">
-
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
 				@RenderBody()
-
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-sm-12 text-center text-muted">
+			<div class="col-sm-12 text-center footertext">
+				<hr />
 				<p>Created by Kole Frazier for CS4790 Assignment 1. See source on github: github.com/kolefrazier</p>
 				<p>Controller icon (google-controller) credit materialdesignicons.com</p>
 			</div>

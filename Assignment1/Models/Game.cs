@@ -67,9 +67,11 @@ namespace Assignment1.Models
 			get
 			{
 				if (_AchievementPercentage >= 100.0)
-					return "orange accent-3";
+					//return "orange accent-3";
+					return "game-completed";
 				else
-					return "green lighten-2";
+					//return "green lighten-2";
+					return "game-regular";
 			}
 		}
 
