@@ -14,6 +14,11 @@ namespace Assignment1.Controllers
 			return View(GameLibrary.MyGameLibrary);
 		}
 
+		public ViewResult FaveFive()
+		{
+			return View();
+		}
+
 		[HttpGet]
 		public ViewResult AddGame()
 		{

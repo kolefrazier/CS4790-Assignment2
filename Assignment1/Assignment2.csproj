@@ -16,6 +16,11 @@
     <Content Include="wwwroot\css\materialize.min.css" />
     <Content Include="wwwroot\favicon-16x16.png" />
     <Content Include="wwwroot\favicon-32x32.png" />
+    <Content Include="wwwroot\images\games\DarkSouls.jpg" />
+    <Content Include="wwwroot\images\games\Isaac.jpg" />
+    <Content Include="wwwroot\images\games\NieR.jpg" />
+    <Content Include="wwwroot\images\games\TF2.jpg" />
+    <Content Include="wwwroot\images\games\Transistor.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
